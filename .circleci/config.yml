@@ -1,0 +1,23 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: continuumio/miniconda3
+    steps:
+      - checkout
+      - run:
+          name: Conda setup
+          command: |
+            conda config --set always_yes yes --set changeps1 no
+            conda install constructor
+      - run:
+          name: Build 64-bit Linux distribution
+          command: constructor --platform=linux-64 .
+      - run:
+          name: Build 64-bit MacOS X distribution
+          command: constructor --platform=osx-64 .
+      - store_artifacts:
+          path: pywwtconda-stable-Linux-x86_64.sh
+      - store_artifacts:
+          path: pywwtconda-stable-MacOSX-x86_64.sh
