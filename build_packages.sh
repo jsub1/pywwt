@@ -15,7 +15,10 @@ conda install nodejs
 # Don't auto-upload, instead we upload manually specifying a token.
 conda config --set anaconda_upload no
 
-packages="ipyevents pywwt"
+# Add wwt channel so that we have ipyevents
+conda config --add channels wwt
+
+packages="pywwt"
 
 for package in $packages; do
 

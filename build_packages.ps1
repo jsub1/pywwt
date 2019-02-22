@@ -33,7 +33,11 @@ checkLastExitCode
 conda config --set anaconda_upload no
 checkLastExitCode
 
-$packages = @("ipyevents", "pywwt")
+# Add wwt channel so that we have ipyevents
+conda config --add channels wwt
+checkLastExitCode
+
+$packages = @("pywwt")
 
 foreach ($package in $packages) {
 
