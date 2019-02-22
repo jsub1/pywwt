@@ -15,6 +15,8 @@ conda install nodejs
 # Don't auto-upload, instead we upload manually specifying a token.
 conda config --set anaconda_upload no
 
+conda config --add channels conda-forge
+
 packages="pywwt"
 
 for package in $packages; do
