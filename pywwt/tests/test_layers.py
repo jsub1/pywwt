@@ -330,7 +330,7 @@ def test_image_layer_equ(tmpdir, wwt_qt_client):
     wcs.wcs.crpix = 50.5, 50.5
     wcs.wcs.cdelt = -0.1, 0.1
 
-    # wwt.layers.add_image_layer(image=(array, wcs))
+    wwt.layers.add_image_layer(image=(array, wcs))
 
     wwt.wait(2)
 
