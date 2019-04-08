@@ -185,7 +185,7 @@ function wwt_apply_json_message(wwt, msg) {
 
     case 'image_layer_create':
 
-      layer = wwt.loadFitsLayerurl(msg['url'], '', false, null);
+      layer = wwt.loadFitsLayer(msg['url'], '', false, null);
       layer._stretch_version = 0;
 
       wwt.layers[msg['id']] = layer;
