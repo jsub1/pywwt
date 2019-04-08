@@ -185,10 +185,10 @@ function wwt_apply_json_message(wwt, msg) {
 
     case 'image_layer_create':
 
-      layer = wwt.loadFitsLayer(msg['url'], '', false, null);
-      layer._stretch_version = 0;
+      // layer = wwt.loadFitsLayer(msg['url'], '', false, null);
+      // layer._stretch_version = 0;
 
-      wwt.layers[msg['id']] = layer;
+      // wwt.layers[msg['id']] = layer;
       break;
 
     case 'image_layer_stretch':
@@ -234,8 +234,8 @@ function wwt_apply_json_message(wwt, msg) {
 
       // TODO: could combine with table_layer_remove
 
-      var layer = wwt.layers[msg['id']];
-      wwtlib.LayerManager.deleteLayerByID(layer.id, true, true);
+      // var layer = wwt.layers[msg['id']];
+      // wwtlib.LayerManager.deleteLayerByID(layer.id, true, true);
       break;
 
     case 'table_layer_create':
