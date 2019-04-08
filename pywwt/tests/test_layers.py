@@ -310,35 +310,34 @@ def test_layers_image(tmpdir, wwt_qt_client):
     if os.environ.get('CI', 'false').lower() == 'false':
         assert_widget_image(tmpdir, wwt, 'sky_layers.png')
 
-# 
-# def test_image_layer_equ(tmpdir, wwt_qt_client):
-#
-#     # A series of tests that excercise the image layer functionality and compare
-#     # the results with a set of baseline images.
-#
-#     wwt = wwt_qt_client
-#
-#     wwt.foreground = 'Black Sky Background'
-#     wwt.background = 'Black Sky Background'
-#
-#     wwt.center_on_coordinates(SkyCoord(30 * u.deg, 40 * u.deg))
-#
-#     array = np.arange(10000).reshape((100, 100))
-#     wcs = WCS()
-#     wcs.wcs.ctype = 'RA---TAN', 'DEC--TAN'
-#     # wcs.wcs.ctype = 'GLON-CAR', 'GLAT-CAR'
-#     wcs.wcs.crval = 30, 40
-#     wcs.wcs.crpix = 50.5, 50.5
-#     wcs.wcs.cdelt = -0.1, 0.1
-#
-#     wwt.layers.add_image_layer(image=(array, wcs))
-#
-#     wwt.wait(2)
-#
-#     # For now this test doesn't work in CI, seemingly because of some
-#     # OpenGL features that aren't available there.
-#     if os.environ.get('CI', 'false').lower() == 'false':
-#         assert_widget_image(tmpdir, wwt, 'image_layer_equ.png')
+def test_image_layer_equ(tmpdir, wwt_qt_client):
+
+    # A series of tests that excercise the image layer functionality and compare
+    # the results with a set of baseline images.
+
+    wwt = wwt_qt_client
+
+    wwt.foreground = 'Black Sky Background'
+    wwt.background = 'Black Sky Background'
+
+    wwt.center_on_coordinates(SkyCoord(30 * u.deg, 40 * u.deg))
+
+    array = np.arange(10000).reshape((100, 100))
+    wcs = WCS()
+    wcs.wcs.ctype = 'RA---TAN', 'DEC--TAN'
+    # wcs.wcs.ctype = 'GLON-CAR', 'GLAT-CAR'
+    wcs.wcs.crval = 30, 40
+    wcs.wcs.crpix = 50.5, 50.5
+    wcs.wcs.cdelt = -0.1, 0.1
+
+    wwt.layers.add_image_layer(image=(array, wcs))
+
+    wwt.wait(2)
+
+    # For now this test doesn't work in CI, seemingly because of some
+    # OpenGL features that aren't available there.
+    if os.environ.get('CI', 'false').lower() == 'false':
+        assert_widget_image(tmpdir, wwt, 'image_layer_equ.png')
 
 
 # def test_image_layer_gal(tmpdir, wwt_qt_client):
