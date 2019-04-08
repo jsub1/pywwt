@@ -80,6 +80,7 @@ def get_data_server(verbose=True):
             else:
                 hash = md5(content).hexdigest() + extension
             self._files[hash] = os.path.abspath(filename)
+            print('DS STATE', self._files)
             return 'http://' + self.host + ':' + str(self.port) + '/data/' + hash
 
         def get_file_contents(self, hash):

@@ -31,7 +31,7 @@ script:
 
   # For now the image tests don't work well on MacOS X, which requires WebEngine. The
   # tests only pass if the Qt window is always in the foreground.
-  - if [[ $TRAVIS_OS_NAME == linux ]]; then pytest pywwt --cov pywwt; fi
+  - if [[ $TRAVIS_OS_NAME == linux ]]; then pytest pywwt -sv --cov pywwt; fi
   - cd docs ; make html linkcheck ; cd ..
 
 after_success:
