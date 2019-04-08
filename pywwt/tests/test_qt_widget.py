@@ -114,6 +114,10 @@ def test_full(tmpdir, capsys, wwt_qt_client):
     wwt = wwt_qt_client
     wwt.foreground_opacity = 1.
 
+    print('FILES', wwt._data_server._files)
+    print('BACK', wwt.background)
+    print('FORE', wwt.foreground)
+
     # The crosshairs are currently broken on Mac/Linux but work on Windows.
     # For consistency, we turn it off here so that the results are the same
     # on all platforms.
