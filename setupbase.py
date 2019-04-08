@@ -180,16 +180,15 @@ def create_cmdclass(prerelease_cmd=None, package_data_spec=None,
         egg = bdist_egg_disabled
 
     cmdclass = dict(
-        build_py=wrapper(build_py, strict=is_repo),
         bdist_egg=egg,
         sdist=wrapper(sdist, strict=True),
         handle_files=handle_files,
     )
 
-    if bdist_wheel:
-        cmdclass['bdist_wheel'] = wrapper(bdist_wheel, strict=True)
+    # if bdist_wheel:
+    #     cmdclass['bdist_wheel'] = wrapper(bdist_wheel, strict=True)
 
-    cmdclass['develop'] = wrapper(develop, strict=True)
+    # cmdclass['develop'] = wrapper(develop, strict=True)
     return cmdclass
 
 
