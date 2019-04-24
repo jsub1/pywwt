@@ -33,8 +33,8 @@ checkLastExitCode
 conda config --set anaconda_upload no
 checkLastExitCode
 
-# Add wwt channel so that we have ipyevents
-conda config --add channels wwt
+# Add conda-forge channel so that we have ipyevents and reproject
+conda config --add channels conda-forge
 checkLastExitCode
 
 $packages = @("pywwt")

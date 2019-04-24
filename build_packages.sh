@@ -15,8 +15,8 @@ conda install nodejs
 # Don't auto-upload, instead we upload manually specifying a token.
 conda config --set anaconda_upload no
 
-# Add wwt channel so that we have ipyevents
-conda config --add channels wwt
+# Add conda-forge channel so that we have ipyevents and reproject
+conda config --add channels conda-forge
 
 packages="pywwt"
 
