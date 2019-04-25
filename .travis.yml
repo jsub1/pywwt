@@ -20,6 +20,7 @@ before_install:
   - conda install anaconda-client
   - git clone https://github.com/glue-viz/conda-sync.git
   - if [[ $STABLE == false ]]; then python conda-sync/sync.py --package reproject --source conda-forge --destination wwt; fi
+  - if [[ $STABLE == false ]]; then python conda-sync/sync.py --package astropy-healpix --source conda-forge --destination wwt; fi
   - if [[ $STABLE == false ]]; then python conda-sync/sync.py --package ipyevents --source conda-forge --destination wwt; fi
 
 
