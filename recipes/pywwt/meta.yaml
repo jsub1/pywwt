@@ -36,7 +36,7 @@ requirements:
     - widgetsnbextension
     - jupyterlab
     - notebook
-    - reproject
+    - reproject >=0.4
 
 test:
   imports:
