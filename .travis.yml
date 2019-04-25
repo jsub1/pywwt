@@ -18,8 +18,8 @@ before_install:
   - source ci-helpers/travis/setup_conda.sh
 
   - git clone https://github.com/glue-viz/conda-sync.git
-  - if [[ $STABLE == false ]]; python conda-sync.py --package reproject --source conda-forge --destination wwt; fi
-  - if [[ $STABLE == false ]]; python conda-sync.py --package ipyevents --source conda-forge --destination wwt; fi
+  - if [[ $STABLE == false ]]; python conda-sync/sync.py --package reproject --source conda-forge --destination wwt; fi
+  - if [[ $STABLE == false ]]; python conda-sync/sync.py --package ipyevents --source conda-forge --destination wwt; fi
 
 
 script:
