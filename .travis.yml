@@ -14,9 +14,12 @@ env:
 
 before_install:
 
-  # Install ci-helpers and set up conda
   - git clone git://github.com/astropy/ci-helpers.git
   - source ci-helpers/travis/setup_conda.sh
+
+  - git clone https://github.com/glue-viz/conda-sync.git
+  - if [[ $STABLE == false ]]; python conda-sync.py --package reproject --source conda-forge --destination wwt; fi
+  - if [[ $STABLE == false ]]; python conda-sync.py --package ipyevents --source conda-forge --destination wwt; fi
 
 
 script:
