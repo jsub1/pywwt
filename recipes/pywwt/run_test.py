@@ -17,6 +17,13 @@ if 'pywwt' not in info['extensions'] or 'pywwt' in info['disabled']:
     sys.exit(1)
 print("labextension OK")
 
+mod = importlib.import_module('pywwt')
+print('mod', mod)
+func = getattr(mod, 'load_jupyter_server_extension', None)
+print('func', func)
+version = getattr(mod, '__version__', '')
+print('version', version)
+
 if validate_serverextension('pywwt') != []:
     print("Issue detected with serverextension")
     sys.exit(1)
